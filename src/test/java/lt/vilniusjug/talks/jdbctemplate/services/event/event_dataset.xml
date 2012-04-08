@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<dataset>
+  <event id="1" name="test event 1" venue="some venue" event_date="2012-04-07"/>
+  <event id="2" name="test event 2" venue="some venue" event_date="2012-04-08"/>
+  <event id="3" name="test event 3" venue="some venue" event_date="2012-04-09"/>
+</dataset>

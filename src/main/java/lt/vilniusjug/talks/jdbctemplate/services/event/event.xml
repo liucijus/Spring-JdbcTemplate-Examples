@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+  <bean id="lt.vilniusjug.talks.jdbctemplate.services.EventService"
+        class="lt.vilniusjug.talks.jdbctemplate.services.event.EventServiceImpl"
+        >
+
+    <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    <property name="queries">
+      <map>
+        <entry key="select-events">
+          <value>
+            <![CDATA[
+              SELECT * FROM event
+            ]]>
+          </value>
+        </entry>
+        <entry key="select-events-by-name">
+          <value>
+            <![CDATA[
+              SELECT * FROM event WHERE name LIKE ?
+            ]]>
+          </value>
+        </entry>
+        <entry key="insert-event">
+          <value>
+            <![CDATA[
+              INSERT INTO event(name, venue, event_date)
+              VALUES(:name, :venue, :eventDate)
+            ]]>
+          </value>
+        </entry>
+        <entry key="delete-event">
+          <value>
+            <![CDATA[
+              DELETE FROM event WHERE id = :id
+            ]]>
+          </value>
+        </entry>
+      </map>
+    </property>
+    <property name="countByNameCall">
+      <bean parent="abstractSimpleJdbcCall">
+        <property name="dbObject" value="count_events_by_name"/>
+      </bean>
+    </property>
+    <property name="exceptionCall">
+      <bean parent="abstractSimpleJdbcCall">
+        <property name="dbObject" value="pRaiseError"/>
+      </bean>
+    </property>
+  </bean>
+</beans>
