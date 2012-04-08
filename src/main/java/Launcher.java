@@ -61,9 +61,5 @@ public class Launcher {
     } catch (ServiceException e) {
       log.info("Exception was thrown:" + e.getMessage());
     }
-
-    //todo: git
-    //todo: slides
-    //todo sun jdk
   }
 }

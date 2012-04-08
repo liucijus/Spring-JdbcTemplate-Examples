@@ -35,7 +35,6 @@ public class AbstractService extends NamedParameterJdbcDaoSupport {
     return getNamedParameterJdbcTemplate().batchUpdate(getQuery(queryId), batch);
   }
 
-
   protected String prepareForLike(String name) {
     return name + "%";
   }
