@@ -5,9 +5,7 @@
 
   <bean id="lt.vilniusjug.talks.jdbctemplate.services.EventService"
         class="lt.vilniusjug.talks.jdbctemplate.services.event.EventServiceImpl"
-        >
-
-    <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        parent="abstractService">
     <property name="queries">
       <map>
         <entry key="select-events">
