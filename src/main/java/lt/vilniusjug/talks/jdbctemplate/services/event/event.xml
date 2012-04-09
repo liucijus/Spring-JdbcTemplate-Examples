@@ -13,14 +13,14 @@
         <entry key="select-events">
           <value>
             <![CDATA[
-              SELECT * FROM event
+              SELECT id, name, venue, event_date FROM event
             ]]>
           </value>
         </entry>
         <entry key="select-events-by-name">
           <value>
             <![CDATA[
-              SELECT * FROM event WHERE name LIKE ?
+              SELECT id, name, venue, event_date FROM event WHERE name LIKE ?
             ]]>
           </value>
         </entry>
