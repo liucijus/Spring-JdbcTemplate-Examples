@@ -31,7 +31,7 @@ public class EventServiceImplTest extends AbstractServiceTest {
   public void testFindAllMapping(){
     List<Event> events = service.findAll();
     Event event = events.get(0);
-    assertEventFiledsLoaded(event);
+    assertEventFieldsLoaded(event);
   }
 
   @Test
@@ -39,10 +39,10 @@ public class EventServiceImplTest extends AbstractServiceTest {
     List<Event> events = service.findAllByName("test");
     assertEquals(3, events.size());
     Event event = events.get(0);
-    assertEventFiledsLoaded(event);
+    assertEventFieldsLoaded(event);
   }
 
-  private void assertEventFiledsLoaded(Event event) {
+  private void assertEventFieldsLoaded(Event event) {
     assertNotNull(event.getId());
     assertNotNull(event.getName());
     assertNotNull(event.getVenue());
